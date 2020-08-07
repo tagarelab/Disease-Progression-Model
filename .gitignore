@@ -55,7 +55,10 @@ Temporary Items
 *.asv
 *.zip
 *.Rdata
-*.xlsx
+
+mlds/*.xlsx
+mlds/*.mat
+
 !mlds/
 !mlds/EM/
 !mlds/gibbs_sampling/
