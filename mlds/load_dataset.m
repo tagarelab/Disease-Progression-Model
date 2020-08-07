@@ -28,10 +28,10 @@ switch dataset_name
     %             all_image_data{i}(4,:) = all_image_data{i}(4,:) + 0.1;
     %         end
             
-            save([dataset_name, '_data.mat'],'all_image_data', ...
+            save(['./data/', dataset_name, '_data.mat'],'all_image_data', ...
                 'all_elapsed_days','subject_ids','labels','extra');
         else
-            load([dataset_name, '_data.mat']);
+            load(['./data/', dataset_name, '_data.mat']);
         end
         dataset.first_dates = extra.first_dates;
         dataset.ages = extra.ages;
@@ -45,10 +45,10 @@ switch dataset_name
         end        
     case {'processed_images_dilate_1', 'processed_images_dilate_2', ...
             'processed_images_erode_1', 'processed_images_erode_2', ...
-            'processed_images_flipped_shifted_dilate_1'}
+            }
         type = dataset_name;
         type([1:17]) = [];
-        savefile_name = ['processed_images_data_',type,'.mat'];
+        savefile_name = ['./data/', 'processed_images_data_', type,'.mat'];
         if 1
             processed_data_dir = ['../data_',type];
 
@@ -67,7 +67,7 @@ switch dataset_name
         [all_image_data, all_elapsed_days, subject_ids, labels] = load_data_from_csv();
     case 'csv_file_363'
         [all_image_data, all_elapsed_days, subject_ids, labels] = load_data_from_csv();
-        S = load('processed_images_data.mat');
+        S = load('./data/processed_images_data.mat');
         ids_selected = S.subject_ids;
         inds = [];
         for i = 1:length(ids_selected)

@@ -3,7 +3,7 @@ function [all_image_data, all_elapsed_days, subject_ids, labels] = ...
 %LOAD_DATA_FROM_CSV Summary of this function goes here
 %   Detailed explanation goes here
 labels = {'LC','RC','LP','RP'};
-M = read_mixed_csv('DATScan_Analysis.csv',',');
+M = read_mixed_csv('./data/DATScan_Analysis.csv',',');
 M1 = M(2:end,:); % remove header
 patnos = M1(1:end,1);
 

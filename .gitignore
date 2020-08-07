@@ -55,11 +55,13 @@ Temporary Items
 *.asv
 *.zip
 *.Rdata
+*.xlsx
 !mlds/
 !mlds/EM/
 !mlds/gibbs_sampling/
 !mlds/model_selection/
 !mlds/utility/
+!mlds/data/
 !utils/
 !figures/
 

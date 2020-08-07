@@ -3,9 +3,8 @@ function run_algo(options)
 %   Detailed explanation goes here
 if nargin < 1
     options = [];
-%     options.dataset_name = 'synthetic_noise_3.mat';
-%     options.dataset_name = 'processed_images_using_masks_flipped_registered';
-%     options.dataset_name = 'processed_images_flipped_shifted';
+%     options.dataset_name = './data/synthetic_noise_3.mat';
+
 
     % This is the dataset for PPMI datscans. The name is long but it does
     % reflect the procedure we used to process the image. Because the
@@ -18,8 +17,7 @@ if nargin < 1
     
 %     options.dataset_name = 'csv_file_363';
 %     options.dataset_name = 'csv_file';
-%     options.dataset_name = 'processed_images_dilate_2';
-%     options.dataset_name = 'processed_images_erode_2';
+
 %     options.dataset_name = '../high_dimension/processed_images_fine_regions_cluster_2.mat';
 
 
