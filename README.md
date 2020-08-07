@@ -1,4 +1,4 @@
-# Statistical Spectral Unmixing Toolkit
+# Neurodegenerative Disease Progression Model for Parkinson's Disease Analysis
 Yuan Zhou
 
 ## Introduction
