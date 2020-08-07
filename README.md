@@ -45,6 +45,8 @@ The "model_selection" folder contains the model selection (Bayesian or cross val
 
 The "utility" folder contains the utility code used for the MLDS.
 
+The "data" folder contains the processed DaTscan data.
+
 
 ## Contact
 
