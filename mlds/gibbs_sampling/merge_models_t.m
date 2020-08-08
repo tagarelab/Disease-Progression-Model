@@ -3,11 +3,18 @@ function [model, r_sk, extra] = merge_models_t(models, r_sks, extras)
 %   Detailed explanation goes here
 num_runs = length(models);
 
+fprintf('The proportions of clusters of the %d runs are: \n', num_runs);
+all_pis = [];
+for i = 1:num_runs
+    all_pis(i,:) = models{i}.pis;
+end
+all_pis
+
 for run = 1:num_runs
     nll(:,run) = extras{run}.nll;
 end
 
-if 1
+if 0
     figure;
     colors = distinguishable_colors(num_runs);
     
@@ -28,10 +35,34 @@ if isempty(chosen)
 end
 
 if 1
+    % The following code is added after running the algorithm on my 
+    % personal computer and finding that it tends to consider all the 
+    % chains converge by only analyzing NLL. The possible reason is that
+    % the originally processed PPMI data lead to different clustering results
+    % with different NLL but the flipped data produce different clustering
+    % results with very similar NLL. To make the code behave similarly across
+    % different datasets. The following code is added.
+    idx = 1;
+    
+    if length(chosen) > 2
+        similarity_mat = zeros(length(chosen), length(chosen));
+        for i = 1:length(chosen)
+            for j = 1:length(chosen)
+                [~, ci] = max(r_sks{chosen(i)}, [], 2);
+                [~, cj] = max(r_sks{chosen(j)}, [], 2);
+                [AR,RI,MI,HI] = rand_index(ci,cj);
+                similarity_mat(i,j) = RI;
+            end
+        end
+        similarity_chosen = sum(similarity_mat, 2);
+        [~, idx] = max(similarity_chosen, [], 1);
+    end
+    
     % choose one of them
-    model = models{chosen(1)};
-    r_sk = r_sks{chosen(1)};
-    extra = extras{chosen(1)};
+    fprintf('The chosen chain is No. %d \n', chosen(idx));
+    model = models{chosen(idx)};
+    r_sk = r_sks{chosen(idx)};
+    extra = extras{chosen(idx)};
 else
     % merge different results
     [model, r_sk, extra] = merge_chosen(chosen, models, r_sks, extras);
