@@ -36,14 +36,18 @@ end
 
 % if 1
 
+idx = 1;
+
 % The following code is added after running the algorithm on my 
 % personal computer and finding that it tends to consider all the 
 % chains converge by only analyzing NLL. The possible reason is that
 % the originally processed PPMI data lead to different clustering results
-% with different NLL but the flipped data produce different clustering
-% results with very similar NLL. To make the code behave similarly across
-% different datasets. The following code is added.
-idx = 1;
+% with different NLL but the flipped (dilated) data produce different clustering
+% results with very similar NLL. However, on the desktop computer, it still tends
+% to correctly exclude 1 different result when 4 chains converge to the same
+% result. To make the code behave similarly across different machines and 
+% different datasets, the following code is added after NLL-based combination
+% analysis.
 
 if length(chosen) > 2
     similarity_mat = zeros(length(chosen), length(chosen));
