@@ -3,7 +3,7 @@ Yuan Zhou
 
 ## Introduction
 
-Parkinson's disease (PD) progression can be studied using DaTscans collected from living PD subjects, which reflect the density of dopamine transporters in the striatum in the brain, hence measure the availability of dopaminergic neurons left in the PD subjects.
+Parkinson's disease (PD) progression can be studied using DaTscans collected from living PD subjects, which reflect the density of dopamine transporters in the striatum of the brain, hence measure the availability of dopaminergic neurons left in the PD subjects.
 
 The PPMI dataset provides 449 subjects that have DaTscans collected at baseline, year 1, 2, 4, and 5. By applying a mixture of linear dynamical system (MLDS) to this longitudinal dataset, we can analyze the progression patterns and subtypes of PD.
 
@@ -11,7 +11,7 @@ This repository contains the Matlab implementation of this MLDS algorithm.
 
 If you find some of the code helpful, please cite the corresponding papers.  
 
-Zhou, Y., Tagare, H. D., "Bayesian Longitudinal Modeling of Early Stage Parkinson’s Disease Using DaTscan Images", *International Conference on Information Processing in Medical Imaging*, Hongkong, 2020  
+Zhou, Y., Tagare, H. D., "Bayesian Longitudinal Modeling of Early Stage Parkinson’s Disease Using DaTscan Images", *International Conference on Information Processing in Medical Imaging*, Hongkong, 2019  
 (https://link.springer.com/chapter/10.1007/978-3-030-20351-1_31)  
 
 Zhou, Y., Tinaz, S., Tagare, H. D., "Robust Bayesian Analysis of Early-Stage Parkinson's Disease Progression Using DaTscan Images". *IEEE Transactions on Medical Imaging*, 2020, Under Review  
