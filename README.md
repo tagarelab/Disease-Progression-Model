@@ -5,7 +5,7 @@ Yuan Zhou
 
 Parkinson's disease (PD) progression can be studied using DaTscans collected from living PD subjects, which reflect the density of dopamine transporters in the striatum of the brain, hence measure the availability of dopaminergic neurons left in the PD subjects.
 
-The PPMI dataset provides 449 subjects that have DaTscans collected at baseline, year 1, 2, 4, and 5. By applying a mixture of linear dynamical system (MLDS) to this longitudinal dataset, we can analyze the progression patterns and subtypes of PD.
+The PPMI dataset provides 449 subjects that have DaTscans collected at baseline, year 1, 2, 4, and 5. By applying a *mixture of linear dynamical systems* (MLDS) to this longitudinal dataset, we can analyze the progression patterns and subtypes of PD.
 
 This repository contains the Matlab implementation of this MLDS algorithm. 
 
@@ -22,7 +22,7 @@ The folder "mlds" contains the algorithm implementation of MLDS.
 
 The folder "utils" contains some utility functions.  
 
-## Mixture of Linear Dynamical System
+## Mixture of Linear Dynamical Systems
 
 The MLDS models the exponential decay of signals in the DaTscans using a linear dynamical system (LDS) with a centrosymmetric constraint on the transition matrix. Extending this LDS to K different transition matrices, we can capture the subtypes inherent in the dataset.
   
