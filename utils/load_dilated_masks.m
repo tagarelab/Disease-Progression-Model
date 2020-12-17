@@ -66,8 +66,8 @@ for i = 1:length(masks_to_dilate)
     masks_dilated{i} = mask_i .* regions_for_masks{i};
 end
 
-masks_to_dilate = {LCmask, RCmask, LPmask, RPmask, LGPmask, RGPmask, ...
-    LTHmask, RTHmask};
+% masks_to_dilate = {LCmask, RCmask, LPmask, RPmask, LGPmask, RGPmask, ...
+%     LTHmask, RTHmask};
 
 LCmask1 = masks_dilated{1};
 RCmask1 = masks_dilated{2};

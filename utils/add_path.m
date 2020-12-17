@@ -10,7 +10,7 @@ if nargin < 1
 end
 
 if ispc
-    addpath('C:/Program Files/Xpdf/bin64');
+%     addpath('C:/Program Files/Xpdf/bin64');
 end
 
 
@@ -20,6 +20,7 @@ addpath([dropbox,'Code/Matlab/Utility/gridLegend']);
 addpath([dropbox,'Code/Matlab/Utility/subtightplot']);
 addpath([dropbox,'Code/Matlab/Utility/textprogressbar']);
 addpath([dropbox,'Code/Matlab/Utility/violinplot']);
+addpath([dropbox,'Code/Matlab/Utility/nhist']);
 addpath([dropbox,'Code/Matlab/Utility']);
 
 s = version;

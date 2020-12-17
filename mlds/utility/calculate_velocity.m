@@ -1,4 +1,6 @@
 function [V, delta_tau, X_base] = calculate_velocity(X, ts)
+% X - cell array of data, each has a size of number of voxels x number of time points.
+% ts - cell array of time stamps (unit: day), will be converted to year.
 V = {};
 delta_tau = {};
 X_base = {};

@@ -48,6 +48,14 @@ LSmask = LSmask(:,:,zLimL:zLimU);
 RSmask = RSmask(:,:,zLimL:zLimU);
 WSmask = WSmask(:,:,zLimL:zLimU);
 
+% Since the center of the MNI atlas is at the 45th column, and the images 
+% are also registered to the MNI atlas, we flip the whole striatum mask 
+% along the 45th column and make it symmetric along this column.
+WSmask1 = fliplr(WSmask); WSmask1 = WSmask1(:,[3:91,91,91],:);
+WSmask = (WSmask > 0.5) | (WSmask1 > 0.5);
+WSmask = double(WSmask);
+% WSmask = WSmask | fliplr(WSmask);
+
 if 0
     LoccMask = niftiread('..\masks\occl_l_.nii');
     RoccMask = niftiread('..\masks\occr_r_.nii');

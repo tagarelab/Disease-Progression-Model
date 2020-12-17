@@ -1,6 +1,11 @@
 function zs1 = one_hot_encoding(zs, mode)
 %ONE_SHOT_ENCODING Summary of this function goes here
 %   Detailed explanation goes here
+% zs - a Number of iteration x N matrix if we aim to change it to one hot
+% encoding or Number of iteration x N x K matrix if we aim to change it to
+% indicate class numbers.
+% mode - 'to_one_hot' or 'from_one_hot'
+
 if strcmp(mode, 'to_one_hot')
     [num_iter, N] = size(zs);
     K = max(zs(:));

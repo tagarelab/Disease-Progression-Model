@@ -14,7 +14,8 @@ If you find some of the code helpful, please cite the corresponding papers.
 Zhou, Y., Tagare, H. D., "Bayesian Longitudinal Modeling of Early Stage Parkinson’s Disease Using DaTscan Images", *International Conference on Information Processing in Medical Imaging*, Hongkong, 2019  
 (https://link.springer.com/chapter/10.1007/978-3-030-20351-1_31)  
 
-Zhou, Y., Tinaz, S., Tagare, H. D., "Robust Bayesian Analysis of Early-Stage Parkinson's Disease Progression Using DaTscan Images". *IEEE Transactions on Medical Imaging*, 2020, Under Review  
+Zhou, Y., Tinaz, S., Tagare, H. D., "Robust Bayesian Analysis of Early-Stage Parkinson's Disease Progression Using DaTscan Images". *IEEE Transactions on Medical Imaging*, 2020  
+(https://ieeexplore.ieee.org/document/9225726)  
 
 #### Organization
 
