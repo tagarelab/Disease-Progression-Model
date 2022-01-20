@@ -3,7 +3,7 @@ function run_algo(options)
 %   Detailed explanation goes here
 if nargin < 1
     options = [];
-    options.dataset_name = './data/synthetic_noise_3.mat';
+    options.dataset_name = './data/demo/synthetic_noise_3.mat';
 
 
     % This is the dataset for PPMI datscans. The name is long but it does
