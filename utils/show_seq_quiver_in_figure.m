@@ -1,7 +1,7 @@
 function show_seq_quiver_in_figure(train_data, train_ts, train_ids, ...
     labels, r_sk, model)
 
-if 0
+if 1
     % 2 by 4 subplots where the first column is the entire data, the second
     % to the last columns are the 3 clusters.
     show_whole_data_and_clusters_together(train_data, train_ts, ...
@@ -124,8 +124,8 @@ figure;
 
 %% plot whole data
 show_seq_quiver_plot(train_data, train_ids, labels, options);
-subplot(plot_rows,plot_cols,1); xlabel({'LC','(a) LC vs RC for all subjects'});
-subplot(plot_rows,plot_cols,5); xlabel({'LP','(b) LP vs RP for all subjects'});
+subplot(plot_rows,plot_cols,1); xlabel({'LC','LC vs RC for all subjects'});
+subplot(plot_rows,plot_cols,5); xlabel({'LP','LP vs RP for all subjects'});
 
 create_time_series_colorbar();
 
@@ -145,6 +145,7 @@ data_interest{2} = [1; 0.75; 1; 1.5];
 data_interest{3} = [1; 0.75; 1; 1.5];
 
 subplot_start_char = 99; % start at '(c)'
+subplot_start_char = [];
 
 for k = [1,2,3]
     train_data_1 = train_data(class_inds == k);
@@ -224,8 +225,15 @@ for i = 1:length(xts)
     plot(xts{i}(1,:),xts{i}(4,:),'-k','linewidth',3);
     plot_line_gradient_color(xts{i}(1,:),xts{i}(4,:),'-',1.5,cmap);
 end
-subplot_char = char(subplot_start_char-1+cluster_idx*2-1);
-xlabel({'LC',['(',subplot_char,') LC vs RC for subtype ',num2str(cluster_idx)]});
+
+if isempty(subplot_start_char)
+    subplot_char = [];
+else
+    subplot_char = char(subplot_start_char-1+cluster_idx*2-1);
+    subplot_char = ['(',subplot_char,') '];
+end
+
+xlabel({'LC',[subplot_char, 'LC vs RC for subtype ',num2str(cluster_idx)]});
 
 % plot LP vs RP
 subplot(options.subplot_inds{2}{:});
@@ -233,8 +241,15 @@ for i = 1:length(xts)
     plot(xts{i}(2,:),xts{i}(3,:),'-k','linewidth',3);
     plot_line_gradient_color(xts{i}(2,:),xts{i}(3,:),'-',1.5,cmap);
 end
-subplot_char = char(subplot_start_char-1+cluster_idx*2);
-xlabel({'LP',['(',subplot_char, ') LP vs RP for subtype ',num2str(cluster_idx)]});
+
+if isempty(subplot_start_char)
+    subplot_char = [];
+else
+    subplot_char = char(subplot_start_char-1+cluster_idx*2);
+    subplot_char = ['(',subplot_char,') '];
+end
+
+xlabel({'LP',[subplot_char, 'LP vs RP for subtype ',num2str(cluster_idx)]});
 
 end
 

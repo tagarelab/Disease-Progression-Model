@@ -44,9 +44,9 @@ if nargin < 4
     options = [];
 end
 
-if size(Mu,1) == 1 && ndims(Sigma) == 2 % single
+if size(Mu,1) == 1 && ndims(Sigma) == 2 % single mean and covariance
     y = loggausspdf(X, Mu, Sigma);
-elseif size(Mu,1) == size(X,1) && size(Sigma,3) == size(X,1) % multiple means
+elseif size(Mu,1) == size(X,1) && size(Sigma,3) == size(X,1) % multiple means and covariances
     y = logmvn_multiple(X, Mu, Sigma, options);
 end
 

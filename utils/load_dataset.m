@@ -97,7 +97,7 @@ end
 
 % change (LC, RC, LP, RP) to (LC, LP, RP, RC)
 % reorder = [1 3 4 2]; 
-if ~isempty(labels)
+if ~isempty(labels) && length(labels) == 4
     [labels, reorder] = reorder_labels(labels, {'LC','LP','RP','RC'});
     for i = 1:length(all_image_data)
         all_image_data{i} = all_image_data{i}(reorder,:);

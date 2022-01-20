@@ -64,7 +64,7 @@ mlds/*.mat
 !mlds/gibbs_sampling/
 !mlds/model_selection/
 !mlds/utility/
-!mlds/data/
+!mlds/data/sythetic_noise_3.mat
 !utils/
 !figure/
 

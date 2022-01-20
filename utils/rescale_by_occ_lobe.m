@@ -1,6 +1,11 @@
-function [imgs_rescaled, scales, scale2s] = rescale_by_occ_lobe(imgs, occMask)
+function [imgs_rescaled, scales, scale2s, normalizing_voxels] = ...
+    rescale_by_occ_lobe(imgs, occMask, mode)
 %RESCALE_BY_OCC_LOBE Summary of this function goes here
 %   Detailed explanation goes here
+if nargin < 3
+    mode = 'median';
+end
+
 nImgs=size(imgs,4);
 occIndex=find(occMask>0.5);
 
@@ -11,13 +16,24 @@ scale2s = zeros(1, nImgs);
 for i=1:nImgs,
     tmp=squeeze(imgs(:,:,:,i));
     occ_values = tmp(occIndex);
-    occMed=median(occ_values);
+    normalizing_voxels_i = occ_values;
+    
+    occMed = median(occ_values);
     occMean = mean(occ_values);
-    tmp=tmp/occMed;
+    
+    if strcmp(mode, 'median')
+        tmp = tmp / occMed;
+        scales(i) = occMed;
+        scale2s(i) = occMean;
+    elseif strcmp(mode, 'mean')
+        tmp = tmp / occMean;
+        scales(i) = occMean;
+        scale2s(i) = occMed;
+    end
     
     imgs_rescaled(:,:,:,i) = tmp;
-    scales(i) = occMed;
-    scale2s(i) = occMean;
+    normalizing_voxels(:,i) = normalizing_voxels_i;
+    
 end
 
 end

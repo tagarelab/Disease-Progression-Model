@@ -2,7 +2,7 @@ function masks = load_masks_structure()
 %LOAD_MASKS_STRUCTURE Summary of this function goes here
 %   Detailed explanation goes here
 [occMask,LSmask,RSmask,LCmask,RCmask,LPmask,RPmask,WSmask, ...
-    LGPmask, RGPmask, LTHmask, RTHmask] = load_masks();
+    LGPmask, RGPmask, LTHmask, RTHmask, SKmask] = load_masks();
 masks = [];
 masks.occ = occMask;
 masks.LS = LSmask;
@@ -16,5 +16,6 @@ masks.LGP = LGPmask;
 masks.RGP = RGPmask;
 masks.LTH = LTHmask;
 masks.RTH = RTHmask;
+masks.SK = SKmask; % skull
 end
 
