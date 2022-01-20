@@ -58,14 +58,18 @@ Temporary Items
 
 mlds/*.xlsx
 mlds/*.mat
+mlds/data/*.*
 
 !mlds/
 !mlds/EM/
 !mlds/gibbs_sampling/
 !mlds/model_selection/
 !mlds/utility/
+!mlds/data/
 !mlds/data/demo/
 !utils/
 !figure/
+
+
 
 result*.mat
